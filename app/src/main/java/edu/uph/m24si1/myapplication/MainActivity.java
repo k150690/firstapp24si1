@@ -1,6 +1,7 @@
 package edu.uph.m24si1.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -31,5 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 "Program Studi: Sistem Informasi\n\n" +
                 "Konsentrasi: Artificial Intelligence"
         );
+        for(int i =10;i>0;i++){
+            tvBiodata.setText(" "+i+" ");
+            Log.d("Cek nilai I"," "+i+" ");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
