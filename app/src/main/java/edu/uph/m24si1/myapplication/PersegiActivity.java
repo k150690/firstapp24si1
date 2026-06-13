@@ -13,10 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class PersegiActivity extends AppCompatActivity {
-    private EditText edtPanjang,edtLebar;
+    private EditText edtPanjang, edtLebar;
     private Button btnHitung;
     private TextView txvHasil;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +33,13 @@ public class PersegiActivity extends AppCompatActivity {
 
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                int panjang,lebar,luas,keliling;
+            public void onClick(View view) {
+                int panjang, lebar,luas,keliling;
                 panjang = Integer.parseInt(edtPanjang.getText().toString());
                 lebar = Integer.parseInt(edtLebar.getText().toString());
                 luas = panjang*lebar;
-                keliling = 2*(panjang+lebar);
-                txvHasil.setText("Luas : "+ luas +"\nKeliling : "+ keliling);
+                keliling= 2 * (panjang+lebar);
+                txvHasil.setText("Luas : "+ luas +"\nKeliling : "+keliling);
             }
         });
     }

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="dialogname">BangunRuang</string>
+    <string-array name="planet">
+        <item>Merkurius</item>
+        <item>Venus</item>
+        <item>Bumi</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturnus</item>
+        <item>Uranus</item>
+        <item>Neptunus</item>
+    </string-array>
 </resources>
