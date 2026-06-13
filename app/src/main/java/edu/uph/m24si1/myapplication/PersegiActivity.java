@@ -34,13 +34,41 @@ public class PersegiActivity extends AppCompatActivity {
         btnHitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int panjang, lebar,luas,keliling;
-                panjang = Integer.parseInt(edtPanjang.getText().toString());
-                lebar = Integer.parseInt(edtLebar.getText().toString());
-                luas = panjang*lebar;
-                keliling= 2 * (panjang+lebar);
-                txvHasil.setText("Luas : "+ luas +"\nKeliling : "+keliling);
+                if (isValidated()) {
+                    int panjang, lebar, luas, keliling;
+                    panjang = Integer.parseInt(edtPanjang.getText().toString());
+                    lebar = Integer.parseInt(edtLebar.getText().toString());
+                    luas = panjang * lebar;
+                    keliling = 2 * (panjang + lebar);
+                    txvHasil.setText("Luas : " + luas + "\nKeliling : " + keliling);
+                }
             }
         });
+    }
+    public boolean isValidated() {
+        if (edtPanjang.getText().toString().isBlank() ||
+                edtPanjang.getText().toString().isEmpty()){
+            edtPanjang.setError("Panjang harus diinput");
+            return false;
+        }
+        if (edtLebar.getText().toString().isBlank() ||
+                edtLebar.getText().toString().isEmpty()){
+            edtLebar.setError("Lebar harus diinput");
+            return false;
+        }
+        if (Integer.parseInt(edtPanjang.getText().toString()) < 0){
+            edtPanjang.setError("Inputan panjang harus >0");
+            return false;
+        }else if (Integer.parseInt (edtLebar.getText().toString()) <0){
+            edtLebar.setError("Inputan lebar harus >0");
+            return false;
+        }else if (Integer.parseInt(edtPanjang.getText().toString()) >1000){
+            edtPanjang.setError("Inputan panjang harus <1000");
+            return false;
+        }else if (Integer.parseInt(edtLebar.getText().toString()) >1000){
+            edtLebar.setError("Inputan lebar harus <500");
+            return false;
+        }
+        return true;
     }
 }
